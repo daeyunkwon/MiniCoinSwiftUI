@@ -11,7 +11,11 @@ import SwiftUI
 struct MiniCoinSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
+
+#Preview(body: {
+    MainTabView()
+})
