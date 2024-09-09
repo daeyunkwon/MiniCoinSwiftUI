@@ -13,7 +13,13 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            NavigationLazyView(TrendingView())
+            TrendingView()
+                .tabItem {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("차트")
+                }
+            
+            TrendingView()
                 .tabItem {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                     Text("차트")
@@ -21,13 +27,14 @@ struct MainTabView: View {
             
                 
         }
+        .tint(.purple)
         
     }
     
     //MARK: - Init
     
     init() {
-        setupTabBarAppearance()
+//        setupTabBarAppearance()
     }
     
     //MARK: - Methods

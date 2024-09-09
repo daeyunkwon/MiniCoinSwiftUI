@@ -19,7 +19,7 @@ struct TrendingView: View {
         
         Text("test")
         
-        .navigationTitle("Crypto Coin")
+        
     }
     
     //MARK: - Init
