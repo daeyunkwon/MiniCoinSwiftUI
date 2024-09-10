@@ -18,6 +18,8 @@
 		44ED3A602C8F4BBA00E3E9CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED3A5F2C8F4BBA00E3E9CF /* NetworkManager.swift */; };
 		44ED3A632C8F597E00E3E9CF /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED3A622C8F597E00E3E9CF /* NavigationLazyView.swift */; };
 		44ED3A662C8F5B6A00E3E9CF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED3A652C8F5B6A00E3E9CF /* MainTabView.swift */; };
+		44ED3A7C2C90973C00E3E9CF /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED3A7B2C90973C00E3E9CF /* TrendingViewModel.swift */; };
+		44ED3A7F2C90978800E3E9CF /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED3A7E2C90978800E3E9CF /* ViewModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		44ED3A5F2C8F4BBA00E3E9CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		44ED3A622C8F597E00E3E9CF /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		44ED3A652C8F5B6A00E3E9CF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		44ED3A7B2C90973C00E3E9CF /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
+		44ED3A7E2C90978800E3E9CF /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +116,9 @@
 		44ED3A522C8F468D00E3E9CF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				44ED3A612C8F595C00E3E9CF /* Wrapper */,
-				44ED3A642C8F5A6400E3E9CF /* CustomView */,
+				44ED3A7D2C90974900E3E9CF /* Protocols */,
+				44ED3A612C8F595C00E3E9CF /* Wrappers */,
+				44ED3A642C8F5A6400E3E9CF /* CustomViews */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -135,27 +140,36 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		44ED3A612C8F595C00E3E9CF /* Wrapper */ = {
+		44ED3A612C8F595C00E3E9CF /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Wrapper;
+			path = Wrappers;
 			sourceTree = "<group>";
 		};
-		44ED3A642C8F5A6400E3E9CF /* CustomView */ = {
+		44ED3A642C8F5A6400E3E9CF /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				44ED3A622C8F597E00E3E9CF /* NavigationLazyView.swift */,
 			);
-			path = CustomView;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		44ED3A672C8F61B300E3E9CF /* Trending */ = {
 			isa = PBXGroup;
 			children = (
+				44ED3A7B2C90973C00E3E9CF /* TrendingViewModel.swift */,
 				44ED3A502C8F465E00E3E9CF /* TrendingView.swift */,
 			);
 			path = Trending;
+			sourceTree = "<group>";
+		};
+		44ED3A7D2C90974900E3E9CF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				44ED3A7E2C90978800E3E9CF /* ViewModelType.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,12 +251,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				44ED3A582C8F4A7700E3E9CF /* Router.swift in Sources */,
+				44ED3A7C2C90973C00E3E9CF /* TrendingViewModel.swift in Sources */,
 				44ED3A562C8F485800E3E9CF /* Coin.swift in Sources */,
 				44ED3A602C8F4BBA00E3E9CF /* NetworkManager.swift in Sources */,
 				44ED3A632C8F597E00E3E9CF /* NavigationLazyView.swift in Sources */,
 				44ED3A662C8F5B6A00E3E9CF /* MainTabView.swift in Sources */,
 				44ED3A512C8F465E00E3E9CF /* TrendingView.swift in Sources */,
 				44ED3A3E2C8F43C100E3E9CF /* MiniCoinSwiftUIApp.swift in Sources */,
+				44ED3A7F2C90978800E3E9CF /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
