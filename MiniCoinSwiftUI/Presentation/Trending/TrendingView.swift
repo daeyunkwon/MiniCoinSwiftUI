@@ -14,6 +14,7 @@ struct TrendingView: View {
     //MARK: - Properties
     
     private var coinList: [CoinItem] = []
+    private var nftList: [NFTItem] = []
     
     enum Section: String, CaseIterable {
         case favorite = "My Favorite"
@@ -60,8 +61,22 @@ struct TrendingView: View {
                         .padding()
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: layout, spacing: 20) {
-                            ForEach(1..<coinList.count) { i in
+                            ForEach(Array(zip(coinList.indices, coinList)), id: \.0) { i, item in
                                 top15CoinRowView(index: i)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    Text(Section.nft.rawValue)
+                        .font(.title)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: layout, spacing: 20) {
+                            ForEach(Array(zip(nftList.indices, nftList)), id: \.0) { i, item in
+                                top7NFTRowView(index: i)
                             }
                         }
                         .padding(.horizontal)
@@ -88,7 +103,8 @@ struct TrendingView: View {
     //MARK: - Init
     
     init() {
-        self.coinList = dummy
+        self.coinList = dummyCoin
+        self.nftList = dummyNFT
     }
     
     //MARK: - Methods
@@ -146,7 +162,7 @@ struct TrendingView: View {
     private func top15CoinRowView(index i: Int) -> some View {
         VStack {
             HStack {
-                Text("\(i)")
+                Text("\(i + 1)")
                     .font(.title)
                     .bold()
                 KFImage.url(URL(string: coinList[i].item.small))
@@ -169,6 +185,37 @@ struct TrendingView: View {
                         .font(.caption)
                 }
                 
+            }
+            .padding()
+            .frame(width: 300)
+            Divider()
+        }
+    }
+    
+    private func top7NFTRowView(index i: Int) -> some View {
+        VStack {
+            HStack {
+                Text("\(i + 1)")
+                    .font(.title)
+                    .bold()
+                KFImage.url(URL(string: nftList[i].thumb))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 25, height: 25)
+                
+                VStack(alignment: .leading) {
+                    Text(nftList[i].name)
+                        .font(.headline)
+                    Text(nftList[i].symbol)
+                        .font(.caption)
+                }
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text(nftList[i].data.floor_price)
+                        .font(.headline)
+                    Text(nftList[i].data.floor_price_in_usd_24h_percentage_change)
+                        .font(.caption)
+                }
             }
             .padding()
             .frame(width: 300)
