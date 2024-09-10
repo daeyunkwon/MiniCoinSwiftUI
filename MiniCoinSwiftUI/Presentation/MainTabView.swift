@@ -39,6 +39,7 @@ struct MainTabView: View {
     
     //MARK: - Methods
     
+    //틴트 컬러 변경하기(더이상 사용 X)
     private func setupTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
