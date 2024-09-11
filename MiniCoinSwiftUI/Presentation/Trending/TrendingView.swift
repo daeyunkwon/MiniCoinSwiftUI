@@ -163,6 +163,7 @@ struct TrendingView: View {
                         .font(.headline)
                     Text("\(item.data.price_change_percentage_24h.krw)")
                         .font(.caption)
+                        .foregroundStyle(item.data.price_change_percentage_24h.krw < 0 ? .blue : .red)
                 }
                 
             }
@@ -195,6 +196,7 @@ struct TrendingView: View {
                         .font(.headline)
                     Text(item.data.floor_price_in_usd_24h_percentage_change)
                         .font(.caption)
+                        .foregroundStyle(Double(item.data.floor_price_in_usd_24h_percentage_change) ?? 0.0 < 0 ? .blue : .red)
                 }
             }
             .padding()
